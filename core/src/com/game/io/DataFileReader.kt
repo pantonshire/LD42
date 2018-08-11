@@ -6,7 +6,7 @@ import java.io.InputStreamReader
 
 object DataFileReader {
 
-    private fun readInternalFile(path: String): Array<String> {
+    fun readInternalFile(path: String): Array<String> {
         val lines: MutableList<String> = mutableListOf()
         try {
             val inputStream = javaClass.getResourceAsStream(path)

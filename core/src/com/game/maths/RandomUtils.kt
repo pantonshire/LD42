@@ -17,4 +17,7 @@ object RandomUtils {
     fun randRange(range: IntRange): Int =
             rng.nextInt(range.endInclusive - range.start + 1) + range.start
 
+
+    fun<T> choose(array: Array<T>): T = array[randRange(0 until array.size)]
+
 }
