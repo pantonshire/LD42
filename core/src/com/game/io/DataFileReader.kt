@@ -11,8 +11,8 @@ object DataFileReader {
         val lines: MutableList<String> = mutableListOf()
         try {
             val inputStream = Gdx.files.internal(path).read()
-            val reader = BufferedReader(InputStreamReader(inputStream))
-            reader.readLines().asSequence().forEach { lines.add(it); println(it) }
+            val reader = BufferedReader(InputStreamReader(inputStream!!))
+            reader.readLines().asSequence().forEach { lines.add(it) }
             reader.close()
         } catch(exception: Exception) {
             println("Error reading internal file $path")

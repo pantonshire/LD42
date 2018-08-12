@@ -8,4 +8,9 @@ enum class Gender {
         MALE -> FEMALE
         FEMALE -> MALE
     }
+
+    fun letter(): Char = when(this) {
+        MALE -> 'm'
+        FEMALE -> 'f'
+    }
 }
