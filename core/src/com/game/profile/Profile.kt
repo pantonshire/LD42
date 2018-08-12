@@ -1,5 +1,6 @@
 package com.game.profile
 
+import com.badlogic.gdx.math.MathUtils
 import java.util.*
 
 class Profile(
