@@ -7,8 +7,10 @@ class Profile(
         val forename: String,
         val lastname: String,
         val age: String,
-        val gender: String,
-        val greeting: String
+        val greeting: String,
+        val legitimate: Boolean,
+        val relation : String,
+        val gender : Gender
 ) {
 
     fun fullName(): String = "$forename $lastname"
@@ -21,6 +23,8 @@ class Profile(
         return IntArray(6) { _ -> rng.nextInt(5) }.toTypedArray()
     }
 
-
+    override fun toString(): String {
+        return "$forename $lastname, $age, $gender ($legitimate)"
+    }
 
 }
