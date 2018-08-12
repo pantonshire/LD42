@@ -19,9 +19,6 @@ public class Main extends ApplicationAdapter {
 		batch = new SpriteBatch();
 		img = new Texture("badlogic.jpg");
 
-		Profile me = ProfileFactory.INSTANCE.genMe();
-		System.out.println(me);
-
 	}
 
 	@Override
