@@ -14,7 +14,7 @@ object ProfileFactory {
     val surnames = DataFileReader.readInternalFile("data/surnames.txt")
     val genders = arrayOf(Gender.MALE, Gender.FEMALE)
 
-    val possibleInconsistencies = 5
+    val possibleInconsistencies = 6
 
 
     fun forename(gender: Gender) : String {
@@ -88,6 +88,9 @@ object ProfileFactory {
             "lorem ipsum"
         }
 
+        val profilePictureGender = if(inconsistencies[5]) gender.other() else gender
+
+        return Profile(forename, surname, age.toString(), greeting, true, relation, gender, profilePictureGender)
     }
 
 
