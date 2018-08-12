@@ -12,7 +12,7 @@ object DataFileReader {
         try {
             val inputStream = Gdx.files.internal(path).read()
             val reader = BufferedReader(InputStreamReader(inputStream))
-            reader.readLines().asSequence().forEach { lines.add(it) }
+            reader.readLines().asSequence().forEach { lines.add(it); println(it) }
             reader.close()
         } catch(exception: Exception) {
             println("Error reading internal file $path")
