@@ -17,11 +17,12 @@ object ProfileFactory {
     val possibleInconsistencies = 6
 
 
-    fun forename(gender: Gender) : String {
-        return RandomUtils.choose(if (gender == Gender.MALE) maleNames else femaleNames);
+    fun forename(gender: Gender): String = when(gender) {
+        Gender.MALE -> RandomUtils.choose(maleNames)
+        Gender.FEMALE -> RandomUtils.choose(femaleNames)
     }
 
-    fun surname() : String {
+    fun surname(): String {
         return RandomUtils.choose(surnames);
     }
 
@@ -38,10 +39,7 @@ object ProfileFactory {
 
     fun newLegitimate(): Profile {
         val gender = RandomUtils.choose(genders)
-        val forename = when(gender) {
-            Gender.MALE -> RandomUtils.choose(maleNames)
-            Gender.FEMALE -> RandomUtils.choose(femaleNames)
-        }
+        val forename = forename(gender)
         val surname = RandomUtils.choose(surnames)
         val age = RandomUtils.randRange(20..50)
         val greeting = "lorem ipsum"
@@ -59,10 +57,7 @@ object ProfileFactory {
 
         val gender = RandomUtils.choose(genders)
 
-        val forename = when(if(inconsistencies[0]) gender.other() else gender) {
-            Gender.MALE -> RandomUtils.choose(maleNames)
-            Gender.FEMALE -> RandomUtils.choose(femaleNames)
-        }
+        val forename = forename(if(inconsistencies[0]) gender.other() else gender)
 
         val surname = if(inconsistencies[1]) {
             RandomUtils.choose(dodgyNames)
