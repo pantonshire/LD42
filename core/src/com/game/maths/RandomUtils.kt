@@ -1,6 +1,6 @@
 package com.game.maths
 
-import java.util.Random
+import java.util.*
 
 object RandomUtils {
 

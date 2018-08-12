@@ -10,7 +10,8 @@ class Profile(
         val greeting: String,
         val legitimate: Boolean,
         val relation : String,
-        val gender : Gender
+        val gender : Gender,
+        val profilePictureGender: Gender
 ) {
 
     fun fullName(): String = "$forename $lastname"
