@@ -27,7 +27,7 @@ object ProfileFactory {
 
     fun buildRandomProfile() : Profile{
         val gender : Gender = RandomUtils.choose(arrayOf(Gender.MALE, Gender.FEMALE))
-        val generated = Profile(forename(gender), surname(), RandomUtils.randRange(0..100).toString(), "some_greeting", true, "myself", gender );
+        val generated = Profile(forename(gender), surname(), RandomUtils.randRange(0..100).toString(), "some_greeting", true, "myself", gender, gender);
         return generated
     }
 
