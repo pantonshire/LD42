@@ -14,12 +14,13 @@ import com.game.profile.ProfileFactory;
 public class Main extends ApplicationAdapter {
 
 	Layer testLayer;
-	Profile testProfile;
+	Profile legitProfile, scamProfile;
 	
 	@Override
 	public void create() {
         testLayer = new Layer(1f);
-        testProfile = ProfileFactory.INSTANCE.newLegitimate();
+        legitProfile = ProfileFactory.INSTANCE.newLegitimate();
+        scamProfile = ProfileFactory.INSTANCE.newScammer(2);
 	}
 
 	@Override
@@ -28,11 +29,13 @@ public class Main extends ApplicationAdapter {
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         if(Gdx.input.isKeyJustPressed(Input.Keys.SPACE)) {
-            testProfile = ProfileFactory.INSTANCE.newLegitimate();
+            legitProfile = ProfileFactory.INSTANCE.newLegitimate();
+            scamProfile = ProfileFactory.INSTANCE.newScammer(2);
         }
 
         testLayer.beginSprites();
-        testProfile.drawFace(testLayer, 0, 0);
+        legitProfile.drawFace(testLayer, 50, 300);
+        scamProfile.drawFace(testLayer, 250, 300);
         testLayer.finishSprites();
 	}
 	

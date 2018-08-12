@@ -13,4 +13,10 @@ enum class Gender {
         MALE -> 'm'
         FEMALE -> 'f'
     }
+
+    override  fun toString() = when(this) {
+        MALE -> "male"
+        FEMALE -> "female"
+    }
+
 }

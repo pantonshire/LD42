@@ -1,5 +1,6 @@
 package com.game.profile
 
+import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.math.MathUtils
 import com.game.graphics.Layer
 import com.game.graphics.TextureManager
@@ -42,6 +43,10 @@ class Profile(
         layer.fastDraw(eyes, x+17, y+30)
         layer.fastDraw(mouth, x+17, y+16)
         layer.fastDraw(hair, x+5, y+2)
+
+        layer.drawText(fullName(), x, y - 20, "notalot35", 24, Color.BLACK)
+        layer.drawText("$age years old", x, y - 50, "notalot35", 24, Color.BLACK)
+        layer.drawText(gender.toString(), x, y - 80, "notalot35", 24, Color.BLACK)
     }
 
 }
