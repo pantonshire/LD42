@@ -1,5 +1,6 @@
 package com.game.io
 
+import com.badlogic.gdx.Gdx
 import java.io.BufferedReader
 import java.io.File
 import java.io.InputStreamReader
@@ -11,7 +12,7 @@ object DataFileReader {
         try {
             val inputStream = javaClass.getResourceAsStream(path)
             val reader = BufferedReader(InputStreamReader(inputStream))
-            reader.readLines().asSequence().forEach { lines.add(it) }
+            reader.readLines().asSequence().forEach { lines.add(it); println(it) }
             reader.close()
         } catch(exception: Exception) {
             println("Error reading internal file $path")
